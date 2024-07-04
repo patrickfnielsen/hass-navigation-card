@@ -7,7 +7,7 @@
 
 **Images**
 
-![Cards - Noctis](https://github.com/patrickfnielsen/hass-navigation-card/blob/main/docs/images/theme-noctis.png?raw=true)
+![Cards - Noctis](https://github.com/patrickfnielsen/hass-navigation-card/blob/master/docs/images/theme-noctis.png?raw=true)
 
 
 ## What is Navigation Card
