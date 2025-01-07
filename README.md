@@ -4,6 +4,7 @@
 ![downloads][downloads-badge]
 ![build][build-badge]
 
+**WARNING: THIS CARD IS IN ALPHA AT BEST!**
 
 **Images**
 
