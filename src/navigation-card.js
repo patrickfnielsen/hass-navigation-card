@@ -227,8 +227,8 @@ class NavigationCard extends LitElement {
             :host {
                 --side-margin: 20px;
                 --icon-size: 28px;
-                --main-color: #FFFFFF;
-                --main-active: #44739ee6;
+                --main-color: var(--primary-text-color);
+                --main-active: var(--primary-color);
                 --mdc-icon-size: var(--icon-size);
             }
 
@@ -241,7 +241,7 @@ class NavigationCard extends LitElement {
                 padding-right: 16px;
                 height: 120px;
                 width: 100%; 
-                background: linear-gradient(180deg, rgba(45, 56, 76, 0) 0%, rgba(35, 46, 66, 0.85) 50%);
+                background: linear-gradient(180deg, color-mix(in srgb, var(--primary-background-color), transparent 100%) 0%, color-mix(in srgb, var(--primary-background-color), transparent 15%) 50%);
                 pointer-events: none;
                 animation: 0.6s opacity ease-in-out;
             }
@@ -267,7 +267,7 @@ class NavigationCard extends LitElement {
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;
-                margin-top: 20px;
+                /*margin-top: 20px;*/
             }
 
             @keyframes position {
