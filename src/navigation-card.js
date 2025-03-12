@@ -50,17 +50,34 @@ class NavigationCard extends LitElement {
         
         // Workaround for now
         if (this.parentElement) {
-            // Really big hack, so sorry
-            const mainElement = document.getElementById("main")
-            if (mainElement) {
-                mainElement.style.display = "flex"
-                mainElement.style.flexFlow = "column"
-            }
-
             this.parentElement.style.position = "sticky"
             this.parentElement.style.bottom = "26px"
             this.parentElement.style.flex = "1 1 100px";
             this.parentElement.style.alignContent = "flex-end";
+
+            // Really big hack, so sorry, so sorry
+            let currentElement = this.parentElement;
+            while (currentElement) {
+                if (currentElement.shadowRoot) {
+                    // If the element has a shadow root, search inside the shadow DOM
+                    const mainElement = currentElement.shadowRoot.getElementById("main");
+                    if (mainElement) {
+                        mainElement.style.display = "flex";
+                        mainElement.style.flexFlow = "column";
+                        return; 
+                    }
+                }
+        
+                // If no shadow root, check if it's the element we are looking for
+                if (currentElement.id === "main") {
+                    currentElement.style.display = "flex";
+                    currentElement.style.flexFlow = "column";
+                    return; 
+                }
+        
+                // Move to the parent element
+                currentElement = currentElement.parentElement;
+            }
         }
     }
 
