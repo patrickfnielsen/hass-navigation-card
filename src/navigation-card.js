@@ -50,8 +50,17 @@ class NavigationCard extends LitElement {
         
         // Workaround for now
         if (this.parentElement) {
+            // Really big hack, so sorry
+            const mainElement = document.getElementById("main")
+            if (mainElement) {
+                mainElement.style.display = "flex"
+                mainElement.style.flexFlow = "column"
+            }
+
             this.parentElement.style.position = "sticky"
             this.parentElement.style.bottom = "26px"
+            this.parentElement.style.flex = "1 1 100px";
+            this.parentElement.style.alignContent = "flex-end";
         }
     }
 
